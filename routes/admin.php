@@ -12,8 +12,7 @@ Route::prefix('admin')
         Route::get('/', function () {
             return view('admin.dashboard');
         })->name('dashboard');
-        Route::prefix('catalogues'
-        )->as('catalogues.')
+        Route::prefix('catalogues')->as('catalogues.')
             ->group(function () {
                 Route::get('/', [CatalogueController::class, 'index'])->name('index');
                 Route::get('create', [CatalogueController::class, 'create'])->name('create');
@@ -24,5 +23,5 @@ Route::prefix('admin')
                 Route::get('{id}/destroy', [CatalogueController::class, 'destroy'])->name('destroy');
             });
 
-        Route::resource('products',ProductController::class);
+        Route::resource('products', ProductController::class);
     });

@@ -12,7 +12,7 @@ class RegisterController extends Controller
 {
     public function showFormRegister()
     {
-
+        return view('auth.register');
     }
 
     public function register()
